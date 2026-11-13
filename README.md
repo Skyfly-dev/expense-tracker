@@ -24,7 +24,7 @@ A simple command-line Expense Tracker built using Python.
 2. Open the project folder.
 3. Run:
 
-python expense_tracker.py
+python expense-tracker.py
 
 Project Type
 
