@@ -258,22 +258,22 @@ def category_summary(expense):
 
 
 #9.main program 
+if __name__=="__main__":
+    
+    print("EXPENSE TRACKER")
+    print("Welcome ! Track ur expenses.....")
 
-print("***********************")
-print("EXPENSE TRACKER")
-print("************************")
-print("Welcome ! Track ur expenses.....")
+    expense=load_expense()
 
-expense=load_expense()
-
-if expense is None:
-    print("Cannot start Expense Tracker because the saved data is corrupted.")
-    exit()
+    if expense is None:
+     print("Cannot start Expense Tracker because the saved data is corrupted.")
+     exit()
 
 
-while True:
-    print("...what would you like to do >>>")
-    print("\n1.Add Expense" \
+    if __name__=="__main__":    
+     while True:
+      print("...what would you like to do >>>")
+      print("\n1.Add Expense" \
 "\n2.View All Expense" \
 "\n3.Calculate Total Expense" \
 "\n4.Calculate Category-wise Expense" \
@@ -281,46 +281,46 @@ while True:
 "\n6.Delete Expense" \
 "\n7.Exit")
     
-    choice=input("enter ur choice(1-7):")
-    if choice=="1":
+      choice=input("enter ur choice(1-7):")
+      if choice=="1":
         add_expense(expense)
         save_expense(expense)
 
-    elif choice=="2":
+      elif choice=="2":
         if not expense:
             print("No expense available to view")
         else:
             view_expense(expense)
 
-    elif choice=="3":
+      elif choice=="3":
         if not expense:
             print("No expense available")
         else:
             total=calculate_total(expense)
             print(f"Total Spending : ₹{total:.2f}")
 
-    elif choice=="4":
+      elif choice=="4":
            if not expense:
                print("No expense available")
            else:
                print("Here is your category wise summary: ")
                category_summary(expense)
 
-    elif choice=="5":
+      elif choice=="5":
         if not expense:
             print("No expense availalble to edit")
         else:
             update_expense(expense)
             save_expense(expense)
 
-    elif choice=="6":
+      elif choice=="6":
         if not expense:
             print("No expense data to delete")
         else:
             delete_expense(expense)
             save_expense(expense)
 
-    elif choice=="7":
+      elif choice=="7":
         print("\n we are exiting expense tracker....")
         print("Thank you ! Please come again")
         break
