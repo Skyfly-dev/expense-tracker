@@ -220,7 +220,7 @@ def delete_expense(expense):
               delete_number=int(input("Which expense do you want to delete?: "))
               
          except ValueError:
-             print("Please enter valid expense no")
+             print("Please enter valid expense number.")
              continue
          if 1<=delete_number<=len(expense):
              break
@@ -261,7 +261,7 @@ def category_summary(expense):
 if __name__=="__main__":
     
     print("EXPENSE TRACKER")
-    print("Welcome ! Track ur expenses.....")
+    print("Welcome ! Track your expenses.....")
 
     expense=load_expense()
 
@@ -308,7 +308,7 @@ if __name__=="__main__":
 
       elif choice=="5":
         if not expense:
-            print("No expense availalble to edit")
+            print("No expense available to edit")
         else:
             update_expense(expense)
             save_expense(expense)
